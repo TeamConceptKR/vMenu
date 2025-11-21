@@ -20,10 +20,10 @@ namespace vMenuClient.menus
         public float currentProximity = (GetSettingsFloat(Setting.vmenu_override_voicechat_default_range) != 0.0) ? GetSettingsFloat(Setting.vmenu_override_voicechat_default_range) : UserDefaults.VoiceChatProximity;
         public List<string> channels = new()
         {
-            "Channel 1 (Default)",
-            "Channel 2",
-            "Channel 3",
-            "Channel 4",
+            "채널 1 (기본)",
+            "채널 2",
+            "채널 3",
+            "채널 4",
         };
         public string currentChannel;
         private readonly List<float> proximityRange = new()
@@ -45,15 +45,15 @@ namespace vMenuClient.menus
             currentChannel = channels[0];
             if (IsAllowed(Permission.VCStaffChannel))
             {
-                channels.Add("Staff Channel");
+                channels.Add("스태프 채널");
             }
 
             // Create the menu.
-            menu = new Menu(Game.Player.Name, "Voice Chat Settings");
+            menu = new Menu(Game.Player.Name, "음성 채팅 설정");
 
-            var voiceChatEnabled = new MenuCheckboxItem("Enable Voice Chat", "Enable or disable voice chat.", EnableVoicechat);
-            var showCurrentSpeaker = new MenuCheckboxItem("Show Current Speaker", "Shows who is currently talking.", ShowCurrentSpeaker);
-            var showVoiceStatus = new MenuCheckboxItem("Show Microphone Status", "Shows whether your microphone is open or muted.", ShowVoiceStatus);
+            var voiceChatEnabled = new MenuCheckboxItem("음성 채팅 활성화", "음성 채팅을 활성화하거나 비활성화합니다.", EnableVoicechat);
+            var showCurrentSpeaker = new MenuCheckboxItem("현재 대화 중인 사람 표시", "현재 누가 말하고 있는지 표시합니다.", ShowCurrentSpeaker);
+            var showVoiceStatus = new MenuCheckboxItem("마이크 상태 표시", "마이크가 열려 있는지 음소거 상태인지 표시합니다.", ShowVoiceStatus);
 
             var proximity = new List<string>()
             {
@@ -65,10 +65,10 @@ namespace vMenuClient.menus
                 "300 m",
                 "1 km",
                 "2 km",
-                "Global",
+                "전역",
             };
-            var voiceChatProximity = new MenuItem("Voice Chat Proximity (" + ConvertToMetric(currentProximity) + ")", "Set the voice chat receiving proximity in meters. Set to 0 for global.");
-            var voiceChatChannel = new MenuListItem("Voice Chat Channel", channels, channels.IndexOf(currentChannel), "Set the voice chat channel.");
+            var voiceChatProximity = new MenuItem("음성 채팅 범위 (" + ConvertToMetric(currentProximity) + ")", "음성 채팅 수신 범위를 미터 단위로 설정합니다. 전역은 0으로 설정하세요.");
+            var voiceChatChannel = new MenuListItem("음성 채팅 채널", channels, channels.IndexOf(currentChannel), "음성 채팅 채널을 설정합니다.");
 
             if (IsAllowed(Permission.VCEnable))
             {
@@ -106,20 +106,20 @@ namespace vMenuClient.menus
                 if (item == voiceChatChannel)
                 {
                     currentChannel = channels[newIndex];
-                    Subtitle.Custom($"New voice chat channel set to: ~b~{channels[newIndex]}~s~.");
+                    Subtitle.Custom($"새로운 음성 채팅 채널: ~b~{channels[newIndex]}~s~.");
                 }
             };
             menu.OnItemSelect += async (sender, item, index) =>
             {
                 if (item == voiceChatProximity)
                 {
-                    var result = await GetUserInput(windowTitle: $"Enter Proximity In Meters. Current: ({ConvertToMetric(currentProximity)})", maxInputLength: 6);
+                    var result = await GetUserInput(windowTitle: $"미터 단위로 범위 입력. 현재: ({ConvertToMetric(currentProximity)})", maxInputLength: 6);
 
                     if (float.TryParse(result, out var resultfloat))
                     {
                         currentProximity = resultfloat;
-                        Subtitle.Custom($"New voice chat proximity set to: ~b~{ConvertToMetric(currentProximity)}~s~.");
-                        voiceChatProximity.Text = ("Voice Chat Proximity (" + ConvertToMetric(currentProximity) + ")");
+                        Subtitle.Custom($"새로운 음성 채팅 범위: ~b~{ConvertToMetric(currentProximity)}~s~.");
+                        voiceChatProximity.Text = ("음성 채팅 범위 (" + ConvertToMetric(currentProximity) + ")");
                     }
                 }
             };
@@ -145,7 +145,7 @@ namespace vMenuClient.menus
             }
             if (input == 0)
             {
-                val = "global";
+                val = "전역";
             }
             return val;
         }
