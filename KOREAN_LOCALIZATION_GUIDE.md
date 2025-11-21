@@ -192,6 +192,17 @@ public void CreateMenu()
 - [.NET Localization Documentation](https://docs.microsoft.com/en-us/dotnet/core/extensions/localization)
 - [Resource File Format](https://docs.microsoft.com/en-us/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 
+## 향후 개선 사항 (Future Enhancements)
+
+현재 구현은 한글 전용이지만, 다음과 같은 개선이 가능합니다:
+
+1. **다중 언어 지원**: Localization.cs를 수정하여 여러 언어를 지원하도록 구성 가능하게 만들기
+2. **시스템 언어 감지**: 사용자의 시스템 언어를 자동 감지하여 적절한 리소스 파일 로드
+3. **런타임 언어 전환**: 게임 중 언어를 전환할 수 있는 기능 추가
+4. **폴백 메커니즘**: 번역이 없는 경우 영어로 자동 폴백
+
+이러한 기능은 현재 한글화 작업이 완료된 후 별도 PR로 추가할 수 있습니다.
+
 ---
 
 **마지막 업데이트**: 2024-11-21  
