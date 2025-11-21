@@ -4,6 +4,7 @@ using MenuAPI;
 
 using static CitizenFX.Core.Native.API;
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.ConfigManager;
 
 namespace vMenuClient.menus
@@ -15,17 +16,17 @@ namespace vMenuClient.menus
 
         private void CreateMenu()
         {
-            AddTextEntryByHash(0x86F10CE6, "Cfx.re 포럼에 업로드"); // Replace the "Upload To Social Club" button in gallery
-            AddTextEntry("ERROR_UPLOAD", "이 사진을 Cfx.re 포럼에 업로드하시겠습니까?"); // Replace the warning message text for uploading
+            AddTextEntryByHash(0x86F10CE6, GetString("Recording_UploadToCfxForum")); // Replace the "Upload To Social Club" button in gallery
+            AddTextEntry("ERROR_UPLOAD", GetString("Recording_UploadConfirm")); // Replace the warning message text for uploading
 
             // Create the menu.
-            menu = new Menu(Localization.GetString("Menu_RecordingOptions"), Localization.GetString("Recording_Title"));
+            menu = new Menu(GetString("Menu_RecordingOptions"), GetString("Recording_Title"));
 
-            var takePic = new MenuItem(Localization.GetString("Recording_TakePhoto"), Localization.GetString("Recording_TakePhoto_Desc"));
-            var openPmGallery = new MenuItem(Localization.GetString("Recording_OpenGallery"), Localization.GetString("Recording_OpenGallery_Desc"));
-            var startRec = new MenuItem(Localization.GetString("Recording_StartRecording"), Localization.GetString("Recording_StartRecording_Desc"));
-            var stopRec = new MenuItem(Localization.GetString("Recording_StopRecording"), Localization.GetString("Recording_StopRecording_Desc"));
-            var openEditor = new MenuItem(Localization.GetString("Recording_RockstarEditor"), Localization.GetString("Recording_RockstarEditor_Desc"));
+            var takePic = new MenuItem(GetString("Recording_TakePhoto"), GetString("Recording_TakePhoto_Desc"));
+            var openPmGallery = new MenuItem(GetString("Recording_OpenGallery"), GetString("Recording_OpenGallery_Desc"));
+            var startRec = new MenuItem(GetString("Recording_StartRecording"), GetString("Recording_StartRecording_Desc"));
+            var stopRec = new MenuItem(GetString("Recording_StopRecording"), GetString("Recording_StopRecording_Desc"));
+            var openEditor = new MenuItem(GetString("Recording_RockstarEditor"), GetString("Recording_RockstarEditor_Desc"));
 
             menu.AddMenuItem(takePic);
             menu.AddMenuItem(openPmGallery);
@@ -39,7 +40,7 @@ namespace vMenuClient.menus
                 {
                     if (IsRecording())
                     {
-                        Notify.Alert(Localization.GetString("Recording_AlreadyRecording"));
+                        Notify.Alert(GetString("Recording_AlreadyRecording"));
                     }
                     else
                     {
@@ -60,7 +61,7 @@ namespace vMenuClient.menus
                 {
                     if (!IsRecording())
                     {
-                        Notify.Alert(Localization.GetString("Recording_NotRecording"));
+                        Notify.Alert(GetString("Recording_NotRecording"));
                     }
                     else
                     {
@@ -81,7 +82,7 @@ namespace vMenuClient.menus
                     }
                     // then fade in the screen.
                     DoScreenFadeIn(1);
-                    Notify.Alert(Localization.GetString("Recording_EditorQuit"), true, true);
+                    Notify.Alert(GetString("Recording_EditorQuit"), true, true);
                 }
             };
 

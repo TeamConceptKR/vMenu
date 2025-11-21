@@ -544,4 +544,12 @@
     <value>새 음성 채팅 근접 거리 설정: ~b~{0}~s~.</value>
   </data>
   
+  <!-- Recording Menu - GTA Native Text Entries -->
+  <data name="Recording_UploadToCfxForum" xml:space="preserve">
+    <value>Cfx.re 포럼에 업로드</value>
+  </data>
+  <data name="Recording_UploadConfirm" xml:space="preserve">
+    <value>이 사진을 Cfx.re 포럼에 업로드하시겠습니까?</value>
+  </data>
+  
 </root>

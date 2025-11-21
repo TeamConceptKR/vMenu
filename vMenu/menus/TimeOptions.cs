@@ -5,6 +5,7 @@ using CitizenFX.Core;
 using MenuAPI;
 
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.PermissionsManager;
 
 namespace vMenuClient.menus
@@ -21,39 +22,39 @@ namespace vMenuClient.menus
         private void CreateMenu()
         {
             // Create the menu.
-            menu = new Menu(Game.Player.Name, Localization.GetString("TimeOptions_Title"));
+            menu = new Menu(Game.Player.Name, GetString("TimeOptions_Title"));
 
             // Create all menu items.
-            freezeTimeToggle = new MenuItem(Localization.GetString("TimeOptions_FreezeTime"), Localization.GetString("TimeOptions_FreezeTime_Desc"));
-            var earlymorning = new MenuItem(Localization.GetString("TimeOptions_EarlyMorning"), Localization.GetString("TimeOptions_EarlyMorning_Desc"))
+            freezeTimeToggle = new MenuItem(GetString("TimeOptions_FreezeTime"), GetString("TimeOptions_FreezeTime_Desc"));
+            var earlymorning = new MenuItem(GetString("TimeOptions_EarlyMorning"), GetString("TimeOptions_EarlyMorning_Desc"))
             {
                 Label = "06:00"
             };
-            var morning = new MenuItem(Localization.GetString("TimeOptions_Morning"), Localization.GetString("TimeOptions_Morning_Desc"))
+            var morning = new MenuItem(GetString("TimeOptions_Morning"), GetString("TimeOptions_Morning_Desc"))
             {
                 Label = "09:00"
             };
-            var noon = new MenuItem(Localization.GetString("TimeOptions_Noon"), Localization.GetString("TimeOptions_Noon_Desc"))
+            var noon = new MenuItem(GetString("TimeOptions_Noon"), GetString("TimeOptions_Noon_Desc"))
             {
                 Label = "12:00"
             };
-            var earlyafternoon = new MenuItem(Localization.GetString("TimeOptions_EarlyAfternoon"), Localization.GetString("TimeOptions_EarlyAfternoon_Desc"))
+            var earlyafternoon = new MenuItem(GetString("TimeOptions_EarlyAfternoon"), GetString("TimeOptions_EarlyAfternoon_Desc"))
             {
                 Label = "15:00"
             };
-            var afternoon = new MenuItem(Localization.GetString("TimeOptions_Afternoon"), Localization.GetString("TimeOptions_Afternoon_Desc"))
+            var afternoon = new MenuItem(GetString("TimeOptions_Afternoon"), GetString("TimeOptions_Afternoon_Desc"))
             {
                 Label = "18:00"
             };
-            var evening = new MenuItem(Localization.GetString("TimeOptions_Evening"), Localization.GetString("TimeOptions_Evening_Desc"))
+            var evening = new MenuItem(GetString("TimeOptions_Evening"), GetString("TimeOptions_Evening_Desc"))
             {
                 Label = "21:00"
             };
-            var midnight = new MenuItem(Localization.GetString("TimeOptions_Midnight"), Localization.GetString("TimeOptions_Midnight_Desc"))
+            var midnight = new MenuItem(GetString("TimeOptions_Midnight"), GetString("TimeOptions_Midnight_Desc"))
             {
                 Label = "00:00"
             };
-            var night = new MenuItem(Localization.GetString("TimeOptions_Night"), Localization.GetString("TimeOptions_Night_Desc"))
+            var night = new MenuItem(GetString("TimeOptions_Night"), GetString("TimeOptions_Night_Desc"))
             {
                 Label = "03:00"
             };
@@ -68,8 +69,8 @@ namespace vMenuClient.menus
                 }
                 minutes.Add(i.ToString());
             }
-            var manualHour = new MenuListItem(Localization.GetString("TimeOptions_SetCustomHour"), hours, 0);
-            var manualMinute = new MenuListItem(Localization.GetString("TimeOptions_SetCustomMinute"), minutes, 0);
+            var manualHour = new MenuListItem(GetString("TimeOptions_SetCustomHour"), hours, 0);
+            var manualMinute = new MenuListItem(GetString("TimeOptions_SetCustomMinute"), minutes, 0);
 
             // Add all menu items to the menu.
             if (IsAllowed(Permission.TOFreezeTime))
@@ -96,8 +97,8 @@ namespace vMenuClient.menus
                 // If it's the freeze time button.
                 if (item == freezeTimeToggle)
                 {
-                    Subtitle.Info(Localization.GetString("TimeOptions_TimeFreezeInfo", 
-                        EventManager.IsServerTimeFrozen ? Localization.GetString("TimeOptions_Continue") : Localization.GetString("TimeOptions_Freeze")), 
+                    Subtitle.Info(GetString("TimeOptions_TimeFreezeInfo", 
+                        EventManager.IsServerTimeFrozen ? GetString("TimeOptions_Continue") : GetString("TimeOptions_Freeze")), 
                         prefix: "Info:");
                     FreezeServerTime(!EventManager.IsServerTimeFrozen);
                 }
@@ -117,7 +118,7 @@ namespace vMenuClient.menus
                     }
 
                     var newMinute = 0;
-                    Subtitle.Info(Localization.GetString("TimeOptions_TimeSetInfo",
+                    Subtitle.Info(GetString("TimeOptions_TimeSetInfo",
                         newHour < 10 ? $"0{newHour}" : newHour.ToString(),
                         newMinute < 10 ? $"0{newMinute}" : newMinute.ToString()), 
                         prefix: "Info:");
@@ -139,7 +140,7 @@ namespace vMenuClient.menus
                     newMinute = item.ListIndex;
                 }
 
-                Subtitle.Info(Localization.GetString("TimeOptions_TimeSetInfo",
+                Subtitle.Info(GetString("TimeOptions_TimeSetInfo",
                     newHour < 10 ? $"0{newHour}" : newHour.ToString(),
                     newMinute < 10 ? $"0{newMinute}" : newMinute.ToString()), 
                     prefix: "Info:");

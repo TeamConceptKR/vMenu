@@ -12,6 +12,7 @@ using vMenuClient.menus;
 
 using static CitizenFX.Core.Native.API;
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.ConfigManager;
 using static vMenuShared.PermissionsManager;
 
@@ -636,9 +637,9 @@ namespace vMenuClient
             {
                 OnlinePlayersMenu = new OnlinePlayers();
                 var menu = OnlinePlayersMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_OnlinePlayers"), Localization.GetString("Menu_OnlinePlayers_Desc"))
+                var button = new MenuItem(GetString("Menu_OnlinePlayers"), GetString("Menu_OnlinePlayers_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(Menu, menu, button);
                 Menu.OnItemSelect += async (sender, item, index) =>
@@ -656,9 +657,9 @@ namespace vMenuClient
             {
                 BannedPlayersMenu = new BannedPlayers();
                 var menu = BannedPlayersMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_BannedPlayers"), Localization.GetString("Menu_BannedPlayers_Desc"))
+                var button = new MenuItem(GetString("Menu_BannedPlayers"), GetString("Menu_BannedPlayers_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(Menu, menu, button);
                 Menu.OnItemSelect += (sender, item, index) =>
@@ -671,7 +672,7 @@ namespace vMenuClient
                 };
             }
 
-            var playerSubmenuBtn = new MenuItem(Localization.GetString("Menu_PlayerRelatedOptions"), Localization.GetString("Menu_PlayerRelatedOptions_Desc")) { Label = Localization.GetString("Common_Label_Arrow") };
+            var playerSubmenuBtn = new MenuItem(GetString("Menu_PlayerRelatedOptions"), GetString("Menu_PlayerRelatedOptions_Desc")) { Label = GetString("Common_Label_Arrow") };
             Menu.AddMenuItem(playerSubmenuBtn);
 
             // Add the player options menu.
@@ -679,23 +680,23 @@ namespace vMenuClient
             {
                 PlayerOptionsMenu = new PlayerOptions();
                 var menu = PlayerOptionsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_PlayerOptions"), Localization.GetString("Menu_PlayerOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_PlayerOptions"), GetString("Menu_PlayerOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(PlayerSubmenu, menu, button);
             }
 
-            var vehicleSubmenuBtn = new MenuItem(Localization.GetString("Menu_VehicleRelatedOptions"), Localization.GetString("Menu_VehicleRelatedOptions_Desc")) { Label = Localization.GetString("Common_Label_Arrow") };
+            var vehicleSubmenuBtn = new MenuItem(GetString("Menu_VehicleRelatedOptions"), GetString("Menu_VehicleRelatedOptions_Desc")) { Label = GetString("Common_Label_Arrow") };
             Menu.AddMenuItem(vehicleSubmenuBtn);
             // Add the vehicle options Menu.
             if (IsAllowed(Permission.VOMenu))
             {
                 VehicleOptionsMenu = new VehicleOptions();
                 var menu = VehicleOptionsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_VehicleOptions"), Localization.GetString("Menu_VehicleOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_VehicleOptions"), GetString("Menu_VehicleOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(VehicleSubmenu, menu, button);
             }
@@ -705,9 +706,9 @@ namespace vMenuClient
             {
                 VehicleSpawnerMenu = new VehicleSpawner();
                 var menu = VehicleSpawnerMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_VehicleSpawner"), Localization.GetString("Menu_VehicleSpawner_Desc"))
+                var button = new MenuItem(GetString("Menu_VehicleSpawner"), GetString("Menu_VehicleSpawner_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(VehicleSubmenu, menu, button);
             }
@@ -717,9 +718,9 @@ namespace vMenuClient
             {
                 SavedVehiclesMenu = new SavedVehicles();
                 var menu = SavedVehiclesMenu.GetTypeMenu();
-                var button = new MenuItem(Localization.GetString("Menu_SavedVehicles"), Localization.GetString("Menu_SavedVehicles_Desc"))
+                var button = new MenuItem(GetString("Menu_SavedVehicles"), GetString("Menu_SavedVehicles_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(VehicleSubmenu, menu, button);
             }
@@ -729,9 +730,9 @@ namespace vMenuClient
             {
                 PersonalVehicleMenu = new PersonalVehicle();
                 var menu = PersonalVehicleMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_PersonalVehicle"), Localization.GetString("Menu_PersonalVehicle_Desc"))
+                var button = new MenuItem(GetString("Menu_PersonalVehicle"), GetString("Menu_PersonalVehicle_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(VehicleSubmenu, menu, button);
             }
@@ -741,22 +742,22 @@ namespace vMenuClient
             {
                 PlayerAppearanceMenu = new PlayerAppearance();
                 var menu = PlayerAppearanceMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_PlayerAppearance"), Localization.GetString("Menu_PlayerAppearance_Desc"))
+                var button = new MenuItem(GetString("Menu_PlayerAppearance"), GetString("Menu_PlayerAppearance_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(PlayerSubmenu, menu, button);
 
                 MpPedCustomizationMenu = new MpPedCustomization();
                 var menu2 = MpPedCustomizationMenu.GetMenu();
-                var button2 = new MenuItem(Localization.GetString("Menu_MPPedCustomization"), Localization.GetString("Menu_MPPedCustomization_Desc"))
+                var button2 = new MenuItem(GetString("Menu_MPPedCustomization"), GetString("Menu_MPPedCustomization_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(PlayerSubmenu, menu2, button2);
             }
 
-            var worldSubmenuBtn = new MenuItem(Localization.GetString("Menu_WorldRelatedOptions"), Localization.GetString("Menu_WorldRelatedOptions_Desc")) { Label = Localization.GetString("Common_Label_Arrow") };
+            var worldSubmenuBtn = new MenuItem(GetString("Menu_WorldRelatedOptions"), GetString("Menu_WorldRelatedOptions_Desc")) { Label = GetString("Common_Label_Arrow") };
             Menu.AddMenuItem(worldSubmenuBtn);
 
             // Add the time options menu.
@@ -765,9 +766,9 @@ namespace vMenuClient
             {
                 TimeOptionsMenu = new TimeOptions();
                 var menu = TimeOptionsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_TimeOptions"), Localization.GetString("Menu_TimeOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_TimeOptions"), GetString("Menu_TimeOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(WorldSubmenu, menu, button);
             }
@@ -778,9 +779,9 @@ namespace vMenuClient
             {
                 WeatherOptionsMenu = new WeatherOptions();
                 var menu = WeatherOptionsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_WeatherOptions"), Localization.GetString("Menu_WeatherOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_WeatherOptions"), GetString("Menu_WeatherOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(WorldSubmenu, menu, button);
             }
@@ -790,9 +791,9 @@ namespace vMenuClient
             {
                 WeaponOptionsMenu = new WeaponOptions();
                 var menu = WeaponOptionsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_WeaponOptions"), Localization.GetString("Menu_WeaponOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_WeaponOptions"), GetString("Menu_WeaponOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(PlayerSubmenu, menu, button);
             }
@@ -802,16 +803,16 @@ namespace vMenuClient
             {
                 WeaponLoadoutsMenu = new WeaponLoadouts();
                 var menu = WeaponLoadoutsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_WeaponLoadouts"), Localization.GetString("Menu_WeaponLoadouts_Desc"))
+                var button = new MenuItem(GetString("Menu_WeaponLoadouts"), GetString("Menu_WeaponLoadouts_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(PlayerSubmenu, menu, button);
             }
 
             if (IsAllowed(Permission.NoClip))
             {
-                var toggleNoclip = new MenuItem(Localization.GetString("Menu_ToggleNoClip"), Localization.GetString("Menu_ToggleNoClip_Desc"));
+                var toggleNoclip = new MenuItem(GetString("Menu_ToggleNoClip"), GetString("Menu_ToggleNoClip_Desc"));
                 PlayerSubmenu.AddMenuItem(toggleNoclip);
                 PlayerSubmenu.OnItemSelect += (sender, item, index) =>
                 {
@@ -827,9 +828,9 @@ namespace vMenuClient
             {
                 VoiceChatSettingsMenu = new VoiceChat();
                 var menu = VoiceChatSettingsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_VoiceChatSettings"), Localization.GetString("Menu_VoiceChatSettings_Desc"))
+                var button = new MenuItem(GetString("Menu_VoiceChatSettings"), GetString("Menu_VoiceChatSettings_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(Menu, menu, button);
             }
@@ -837,9 +838,9 @@ namespace vMenuClient
             {
                 RecordingMenu = new Recording();
                 var menu = RecordingMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_RecordingOptions"), Localization.GetString("Menu_RecordingOptions_Desc"))
+                var button = new MenuItem(GetString("Menu_RecordingOptions"), GetString("Menu_RecordingOptions_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(Menu, menu, button);
             }
@@ -848,9 +849,9 @@ namespace vMenuClient
             {
                 MiscSettingsMenu = new MiscSettings();
                 var menu = MiscSettingsMenu.GetMenu();
-                var button = new MenuItem(Localization.GetString("Menu_MiscSettings"), Localization.GetString("Menu_MiscSettings_Desc"))
+                var button = new MenuItem(GetString("Menu_MiscSettings"), GetString("Menu_MiscSettings_Desc"))
                 {
-                    Label = Localization.GetString("Common_Label_Arrow")
+                    Label = GetString("Common_Label_Arrow")
                 };
                 AddMenu(Menu, menu, button);
             }
@@ -858,9 +859,9 @@ namespace vMenuClient
             // Add About Menu.
             AboutMenu = new About();
             var sub = AboutMenu.GetMenu();
-            var btn = new MenuItem(Localization.GetString("Menu_AboutvMenu"), Localization.GetString("Menu_AboutvMenu_Desc"))
+            var btn = new MenuItem(GetString("Menu_AboutvMenu"), GetString("Menu_AboutvMenu_Desc"))
             {
-                Label = Localization.GetString("Common_Label_Arrow")
+                Label = GetString("Common_Label_Arrow")
             };
             AddMenu(Menu, sub, btn);
 
