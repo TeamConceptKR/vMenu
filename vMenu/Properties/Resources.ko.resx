@@ -253,4 +253,295 @@
     <value>→→→</value>
   </data>
   
+  <!-- Time Options Menu -->
+  <data name="TimeOptions_Title" xml:space="preserve">
+    <value>시간 옵션</value>
+  </data>
+  <data name="TimeOptions_FreezeTime" xml:space="preserve">
+    <value>시간 고정/해제</value>
+  </data>
+  <data name="TimeOptions_FreezeTime_Desc" xml:space="preserve">
+    <value>시간 고정을 활성화하거나 비활성화합니다.</value>
+  </data>
+  <data name="TimeOptions_EarlyMorning" xml:space="preserve">
+    <value>이른 아침</value>
+  </data>
+  <data name="TimeOptions_EarlyMorning_Desc" xml:space="preserve">
+    <value>시간을 06:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Morning" xml:space="preserve">
+    <value>아침</value>
+  </data>
+  <data name="TimeOptions_Morning_Desc" xml:space="preserve">
+    <value>시간을 09:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Noon" xml:space="preserve">
+    <value>정오</value>
+  </data>
+  <data name="TimeOptions_Noon_Desc" xml:space="preserve">
+    <value>시간을 12:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_EarlyAfternoon" xml:space="preserve">
+    <value>이른 오후</value>
+  </data>
+  <data name="TimeOptions_EarlyAfternoon_Desc" xml:space="preserve">
+    <value>시간을 15:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Afternoon" xml:space="preserve">
+    <value>오후</value>
+  </data>
+  <data name="TimeOptions_Afternoon_Desc" xml:space="preserve">
+    <value>시간을 18:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Evening" xml:space="preserve">
+    <value>저녁</value>
+  </data>
+  <data name="TimeOptions_Evening_Desc" xml:space="preserve">
+    <value>시간을 21:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Midnight" xml:space="preserve">
+    <value>자정</value>
+  </data>
+  <data name="TimeOptions_Midnight_Desc" xml:space="preserve">
+    <value>시간을 00:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_Night" xml:space="preserve">
+    <value>밤</value>
+  </data>
+  <data name="TimeOptions_Night_Desc" xml:space="preserve">
+    <value>시간을 03:00으로 설정합니다.</value>
+  </data>
+  <data name="TimeOptions_SetCustomHour" xml:space="preserve">
+    <value>사용자 지정 시간 설정</value>
+  </data>
+  <data name="TimeOptions_SetCustomMinute" xml:space="preserve">
+    <value>사용자 지정 분 설정</value>
+  </data>
+  <data name="TimeOptions_TimeFreezeInfo" xml:space="preserve">
+    <value>시간이 이제 {0}됩니다.</value>
+  </data>
+  <data name="TimeOptions_TimeSetInfo" xml:space="preserve">
+    <value>시간을 ~y~{0}~s~:~y~{1}~s~(으)로 설정했습니다.</value>
+  </data>
+  <data name="TimeOptions_Continue" xml:space="preserve">
+    <value>~y~계속</value>
+  </data>
+  <data name="TimeOptions_Freeze" xml:space="preserve">
+    <value>~o~고정</value>
+  </data>
+
+  <!-- Weather Options Menu -->
+  <data name="WeatherOptions_Title" xml:space="preserve">
+    <value>날씨 옵션</value>
+  </data>
+  <data name="WeatherOptions_DynamicWeather" xml:space="preserve">
+    <value>동적 날씨 전환</value>
+  </data>
+  <data name="WeatherOptions_DynamicWeather_Desc" xml:space="preserve">
+    <value>동적 날씨 변화를 활성화하거나 비활성화합니다.</value>
+  </data>
+  <data name="WeatherOptions_Blackout" xml:space="preserve">
+    <value>블랙아웃 전환</value>
+  </data>
+  <data name="WeatherOptions_Blackout_Desc" xml:space="preserve">
+    <value>맵 전체의 모든 조명을 비활성화하거나 활성화합니다.</value>
+  </data>
+  <data name="WeatherOptions_VehicleBlackout" xml:space="preserve">
+    <value>차량 조명 블랙아웃 전환</value>
+  </data>
+  <data name="WeatherOptions_VehicleBlackout_Desc" xml:space="preserve">
+    <value>맵 전체의 모든 차량 조명을 비활성화하거나 활성화합니다.</value>
+  </data>
+  <data name="WeatherOptions_SnowEffects" xml:space="preserve">
+    <value>눈 효과 활성화</value>
+  </data>
+  <data name="WeatherOptions_SnowEffects_Desc" xml:space="preserve">
+    <value>지면에 눈이 나타나도록 강제하고 보행자와 차량에 대한 눈 입자 효과를 활성화합니다. 최상의 결과를 위해 X-MAS 또는 Light Snow 날씨와 결합하세요.</value>
+  </data>
+  <data name="WeatherOptions_ExtraSunny" xml:space="preserve">
+    <value>매우 맑음</value>
+  </data>
+  <data name="WeatherOptions_ExtraSunny_Desc" xml:space="preserve">
+    <value>날씨를 ~y~매우 맑음~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Clear" xml:space="preserve">
+    <value>맑음</value>
+  </data>
+  <data name="WeatherOptions_Clear_Desc" xml:space="preserve">
+    <value>날씨를 ~y~맑음~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Neutral" xml:space="preserve">
+    <value>중립</value>
+  </data>
+  <data name="WeatherOptions_Neutral_Desc" xml:space="preserve">
+    <value>날씨를 ~y~중립~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Smog" xml:space="preserve">
+    <value>스모그</value>
+  </data>
+  <data name="WeatherOptions_Smog_Desc" xml:space="preserve">
+    <value>날씨를 ~y~스모그~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Foggy" xml:space="preserve">
+    <value>안개</value>
+  </data>
+  <data name="WeatherOptions_Foggy_Desc" xml:space="preserve">
+    <value>날씨를 ~y~안개~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Cloudy" xml:space="preserve">
+    <value>흐림</value>
+  </data>
+  <data name="WeatherOptions_Cloudy_Desc" xml:space="preserve">
+    <value>날씨를 ~y~흐림~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Overcast" xml:space="preserve">
+    <value>구름 많음</value>
+  </data>
+  <data name="WeatherOptions_Overcast_Desc" xml:space="preserve">
+    <value>날씨를 ~y~구름 많음~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Clearing" xml:space="preserve">
+    <value>개임</value>
+  </data>
+  <data name="WeatherOptions_Clearing_Desc" xml:space="preserve">
+    <value>날씨를 ~y~개임~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Rainy" xml:space="preserve">
+    <value>비</value>
+  </data>
+  <data name="WeatherOptions_Rainy_Desc" xml:space="preserve">
+    <value>날씨를 ~y~비~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Thunder" xml:space="preserve">
+    <value>천둥</value>
+  </data>
+  <data name="WeatherOptions_Thunder_Desc" xml:space="preserve">
+    <value>날씨를 ~y~천둥~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Blizzard" xml:space="preserve">
+    <value>눈보라</value>
+  </data>
+  <data name="WeatherOptions_Blizzard_Desc" xml:space="preserve">
+    <value>날씨를 ~y~눈보라~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Snow" xml:space="preserve">
+    <value>눈</value>
+  </data>
+  <data name="WeatherOptions_Snow_Desc" xml:space="preserve">
+    <value>날씨를 ~y~눈~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_LightSnow" xml:space="preserve">
+    <value>가벼운 눈</value>
+  </data>
+  <data name="WeatherOptions_LightSnow_Desc" xml:space="preserve">
+    <value>날씨를 ~y~가벼운 눈~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_XMasSnow" xml:space="preserve">
+    <value>크리스마스 눈</value>
+  </data>
+  <data name="WeatherOptions_XMasSnow_Desc" xml:space="preserve">
+    <value>날씨를 ~y~크리스마스~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_Halloween" xml:space="preserve">
+    <value>할로윈</value>
+  </data>
+  <data name="WeatherOptions_Halloween_Desc" xml:space="preserve">
+    <value>날씨를 ~y~할로윈~s~(으)로 설정합니다!</value>
+  </data>
+  <data name="WeatherOptions_RemoveClouds" xml:space="preserve">
+    <value>모든 구름 제거</value>
+  </data>
+  <data name="WeatherOptions_RemoveClouds_Desc" xml:space="preserve">
+    <value>하늘에서 모든 구름을 제거합니다!</value>
+  </data>
+  <data name="WeatherOptions_RandomizeClouds" xml:space="preserve">
+    <value>구름 무작위화</value>
+  </data>
+  <data name="WeatherOptions_RandomizeClouds_Desc" xml:space="preserve">
+    <value>하늘에 무작위 구름을 추가합니다!</value>
+  </data>
+  <data name="WeatherOptions_WeatherChange" xml:space="preserve">
+    <value>날씨가 ~y~{0}~s~(으)로 변경됩니다. {1}초가 걸립니다.</value>
+  </data>
+  <data name="WeatherOptions_DynamicToggle" xml:space="preserve">
+    <value>동적 날씨 변화가 이제 {0}~s~되었습니다.</value>
+  </data>
+  <data name="WeatherOptions_BlackoutToggle" xml:space="preserve">
+    <value>블랙아웃 모드가 이제 {0}~s~되었습니다.</value>
+  </data>
+  <data name="WeatherOptions_VehicleBlackoutToggle" xml:space="preserve">
+    <value>차량 조명 블랙아웃 모드가 이제 {0}~s~되었습니다.</value>
+  </data>
+  <data name="WeatherOptions_SnowDisableWarning" xml:space="preserve">
+    <value>날씨가 ~y~{0}~s~일 때는 눈 효과를 비활성화할 수 없습니다.</value>
+  </data>
+  <data name="WeatherOptions_SnowToggle" xml:space="preserve">
+    <value>눈 효과가 이제 강제로 {0}~s~됩니다.</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>~g~활성화</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>~r~비활성화</value>
+  </data>
+
+  <!-- Voice Chat Menu -->
+  <data name="VoiceChat_Title" xml:space="preserve">
+    <value>음성 채팅 설정</value>
+  </data>
+  <data name="VoiceChat_Enable" xml:space="preserve">
+    <value>음성 채팅 활성화</value>
+  </data>
+  <data name="VoiceChat_Enable_Desc" xml:space="preserve">
+    <value>음성 채팅을 활성화하거나 비활성화합니다.</value>
+  </data>
+  <data name="VoiceChat_ShowSpeaker" xml:space="preserve">
+    <value>현재 말하는 사람 표시</value>
+  </data>
+  <data name="VoiceChat_ShowSpeaker_Desc" xml:space="preserve">
+    <value>현재 누가 말하고 있는지 표시합니다.</value>
+  </data>
+  <data name="VoiceChat_ShowMicStatus" xml:space="preserve">
+    <value>마이크 상태 표시</value>
+  </data>
+  <data name="VoiceChat_ShowMicStatus_Desc" xml:space="preserve">
+    <value>마이크가 열려 있는지 음소거되어 있는지 표시합니다.</value>
+  </data>
+  <data name="VoiceChat_Proximity" xml:space="preserve">
+    <value>음성 채팅 근접 거리 ({0})</value>
+  </data>
+  <data name="VoiceChat_Proximity_Desc" xml:space="preserve">
+    <value>음성 채팅 수신 근접 거리를 미터 단위로 설정합니다. 전역으로 설정하려면 0으로 설정하세요.</value>
+  </data>
+  <data name="VoiceChat_Channel" xml:space="preserve">
+    <value>음성 채팅 채널</value>
+  </data>
+  <data name="VoiceChat_Channel_Desc" xml:space="preserve">
+    <value>음성 채팅 채널을 설정합니다.</value>
+  </data>
+  <data name="VoiceChat_Channel1" xml:space="preserve">
+    <value>채널 1 (기본)</value>
+  </data>
+  <data name="VoiceChat_Channel2" xml:space="preserve">
+    <value>채널 2</value>
+  </data>
+  <data name="VoiceChat_Channel3" xml:space="preserve">
+    <value>채널 3</value>
+  </data>
+  <data name="VoiceChat_Channel4" xml:space="preserve">
+    <value>채널 4</value>
+  </data>
+  <data name="VoiceChat_StaffChannel" xml:space="preserve">
+    <value>스태프 채널</value>
+  </data>
+  <data name="VoiceChat_ChannelSet" xml:space="preserve">
+    <value>새 음성 채팅 채널 설정: ~b~{0}~s~.</value>
+  </data>
+  <data name="VoiceChat_ProximityPrompt" xml:space="preserve">
+    <value>미터 단위로 근접 거리를 입력하세요. 현재: ({0})</value>
+  </data>
+  <data name="VoiceChat_ProximitySet" xml:space="preserve">
+    <value>새 음성 채팅 근접 거리 설정: ~b~{0}~s~.</value>
+  </data>
+  
 </root>

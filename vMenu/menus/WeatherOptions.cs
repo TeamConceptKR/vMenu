@@ -41,30 +41,30 @@ namespace vMenuClient.menus
         private void CreateMenu()
         {
             // Create the menu.
-            menu = new Menu(Game.Player.Name, "Weather Options");
+            menu = new Menu(Game.Player.Name, Localization.GetString("WeatherOptions_Title"));
 
-            dynamicWeatherEnabled = new MenuCheckboxItem("Toggle Dynamic Weather", "Enable or disable dynamic weather changes.", EventManager.DynamicWeatherEnabled);
-            blackout = new MenuCheckboxItem("Toggle Blackout", "This disables or enables all lights across the map.", EventManager.IsBlackoutEnabled);
-            vehicleBlackout = new MenuCheckboxItem("Toggle Vehicle Lights Blackout", "This disables or enables all vehicle lights across the map.", !EventManager.IsVehicleLightsEnabled);
-            snowEnabled = new MenuCheckboxItem("Enable Snow Effects", "This will force snow to appear on the ground and enable snow particle effects for peds and vehicles. Combine with X-MAS or Light Snow weather for best results.", ConfigManager.GetSettingsBool(ConfigManager.Setting.vmenu_enable_snow));
+            dynamicWeatherEnabled = new MenuCheckboxItem(Localization.GetString("WeatherOptions_DynamicWeather"), Localization.GetString("WeatherOptions_DynamicWeather_Desc"), EventManager.DynamicWeatherEnabled);
+            blackout = new MenuCheckboxItem(Localization.GetString("WeatherOptions_Blackout"), Localization.GetString("WeatherOptions_Blackout_Desc"), EventManager.IsBlackoutEnabled);
+            vehicleBlackout = new MenuCheckboxItem(Localization.GetString("WeatherOptions_VehicleBlackout"), Localization.GetString("WeatherOptions_VehicleBlackout_Desc"), !EventManager.IsVehicleLightsEnabled);
+            snowEnabled = new MenuCheckboxItem(Localization.GetString("WeatherOptions_SnowEffects"), Localization.GetString("WeatherOptions_SnowEffects_Desc"), ConfigManager.GetSettingsBool(ConfigManager.Setting.vmenu_enable_snow));
             
-            var extrasunny = new MenuItem("Extra Sunny", "Set the weather to ~y~extra sunny~s~!") { ItemData = "EXTRASUNNY" };
-            var clear = new MenuItem("Clear", "Set the weather to ~y~clear~s~!") { ItemData = "CLEAR" };
-            var neutral = new MenuItem("Neutral", "Set the weather to ~y~neutral~s~!") { ItemData = "NEUTRAL" };
-            var smog = new MenuItem("Smog", "Set the weather to ~y~smog~s~!") { ItemData = "SMOG" };
-            var foggy = new MenuItem("Foggy", "Set the weather to ~y~foggy~s~!") { ItemData = "FOGGY" };
-            var clouds = new MenuItem("Cloudy", "Set the weather to ~y~clouds~s~!") { ItemData = "CLOUDS" };
-            var overcast = new MenuItem("Overcast", "Set the weather to ~y~overcast~s~!") { ItemData = "OVERCAST" };
-            var clearing = new MenuItem("Clearing", "Set the weather to ~y~clearing~s~!") { ItemData = "CLEARING" };
-            var rain = new MenuItem("Rainy", "Set the weather to ~y~rain~s~!") { ItemData = "RAIN" };
-            var thunder = new MenuItem("Thunder", "Set the weather to ~y~thunder~s~!") { ItemData = "THUNDER" };
-            var blizzard = new MenuItem("Blizzard", "Set the weather to ~y~blizzard~s~!") { ItemData = "BLIZZARD" };
-            var snow = new MenuItem("Snow", "Set the weather to ~y~snow~s~!") { ItemData = "SNOW" };
-            var snowlight = new MenuItem("Light Snow", "Set the weather to ~y~light snow~s~!") { ItemData = "SNOWLIGHT" };
-            var xmas = new MenuItem("X-MAS Snow", "Set the weather to ~y~x-mas~s~!") { ItemData = "XMAS" };
-            var halloween = new MenuItem("Halloween", "Set the weather to ~y~halloween~s~!") { ItemData = "HALLOWEEN" };
-            var removeclouds = new MenuItem("Remove All Clouds", "Remove all clouds from the sky!");
-            var randomizeclouds = new MenuItem("Randomize Clouds", "Add random clouds to the sky!");
+            var extrasunny = new MenuItem(Localization.GetString("WeatherOptions_ExtraSunny"), Localization.GetString("WeatherOptions_ExtraSunny_Desc")) { ItemData = "EXTRASUNNY" };
+            var clear = new MenuItem(Localization.GetString("WeatherOptions_Clear"), Localization.GetString("WeatherOptions_Clear_Desc")) { ItemData = "CLEAR" };
+            var neutral = new MenuItem(Localization.GetString("WeatherOptions_Neutral"), Localization.GetString("WeatherOptions_Neutral_Desc")) { ItemData = "NEUTRAL" };
+            var smog = new MenuItem(Localization.GetString("WeatherOptions_Smog"), Localization.GetString("WeatherOptions_Smog_Desc")) { ItemData = "SMOG" };
+            var foggy = new MenuItem(Localization.GetString("WeatherOptions_Foggy"), Localization.GetString("WeatherOptions_Foggy_Desc")) { ItemData = "FOGGY" };
+            var clouds = new MenuItem(Localization.GetString("WeatherOptions_Cloudy"), Localization.GetString("WeatherOptions_Cloudy_Desc")) { ItemData = "CLOUDS" };
+            var overcast = new MenuItem(Localization.GetString("WeatherOptions_Overcast"), Localization.GetString("WeatherOptions_Overcast_Desc")) { ItemData = "OVERCAST" };
+            var clearing = new MenuItem(Localization.GetString("WeatherOptions_Clearing"), Localization.GetString("WeatherOptions_Clearing_Desc")) { ItemData = "CLEARING" };
+            var rain = new MenuItem(Localization.GetString("WeatherOptions_Rainy"), Localization.GetString("WeatherOptions_Rainy_Desc")) { ItemData = "RAIN" };
+            var thunder = new MenuItem(Localization.GetString("WeatherOptions_Thunder"), Localization.GetString("WeatherOptions_Thunder_Desc")) { ItemData = "THUNDER" };
+            var blizzard = new MenuItem(Localization.GetString("WeatherOptions_Blizzard"), Localization.GetString("WeatherOptions_Blizzard_Desc")) { ItemData = "BLIZZARD" };
+            var snow = new MenuItem(Localization.GetString("WeatherOptions_Snow"), Localization.GetString("WeatherOptions_Snow_Desc")) { ItemData = "SNOW" };
+            var snowlight = new MenuItem(Localization.GetString("WeatherOptions_LightSnow"), Localization.GetString("WeatherOptions_LightSnow_Desc")) { ItemData = "SNOWLIGHT" };
+            var xmas = new MenuItem(Localization.GetString("WeatherOptions_XMasSnow"), Localization.GetString("WeatherOptions_XMasSnow_Desc")) { ItemData = "XMAS" };
+            var halloween = new MenuItem(Localization.GetString("WeatherOptions_Halloween"), Localization.GetString("WeatherOptions_Halloween_Desc")) { ItemData = "HALLOWEEN" };
+            var removeclouds = new MenuItem(Localization.GetString("WeatherOptions_RemoveClouds"), Localization.GetString("WeatherOptions_RemoveClouds_Desc"));
+            var randomizeclouds = new MenuItem(Localization.GetString("WeatherOptions_RandomizeClouds"), Localization.GetString("WeatherOptions_RandomizeClouds_Desc"));
 
             if (IsAllowed(Permission.WODynamic))
             {
@@ -119,7 +119,7 @@ namespace vMenuClient.menus
                 }
                 else if (item.ItemData is string weatherType)
                 {
-                    Notify.Custom($"The weather will be changed to ~y~{item.Text}~s~. This will take {EventManager.WeatherChangeTime} seconds.");
+                    Notify.Custom(Localization.GetString("WeatherOptions_WeatherChange", item.Text, EventManager.WeatherChangeTime));
                     UpdateServerWeather(weatherType, EventManager.DynamicWeatherEnabled, EventManager.IsSnowEnabled);
                 }
             };
@@ -128,28 +128,28 @@ namespace vMenuClient.menus
             {
                 if (item == dynamicWeatherEnabled)
                 {
-                    Notify.Custom($"Dynamic weather changes are now {(_checked ? "~g~enabled" : "~r~disabled")}~s~.");
+                    Notify.Custom(Localization.GetString("WeatherOptions_DynamicToggle", _checked ? Localization.GetString("Common_Enabled") : Localization.GetString("Common_Disabled")));
                     UpdateServerWeather(EventManager.GetServerWeather, _checked, EventManager.IsSnowEnabled);
                 }
                 else if (item == blackout)
                 {
-                    Notify.Custom($"Blackout mode is now {(_checked ? "~g~enabled" : "~r~disabled")}~s~.");
+                    Notify.Custom(Localization.GetString("WeatherOptions_BlackoutToggle", _checked ? Localization.GetString("Common_Enabled") : Localization.GetString("Common_Disabled")));
                     UpdateServerBlackout(_checked);
                 }
                 else if (item == vehicleBlackout)
                 {
-                    Notify.Custom($"Vehicle light blackout mode is now {(_checked ? "~g~enabled" : "~r~disabled")}~s~.");
+                    Notify.Custom(Localization.GetString("WeatherOptions_VehicleBlackoutToggle", _checked ? Localization.GetString("Common_Enabled") : Localization.GetString("Common_Disabled")));
                     UpdateServerVehicleBlackout(!_checked);
                 }
                 else if (item == snowEnabled)
                 {
                     if (EventManager.GetServerWeather is "XMAS" or "SNOWLIGHT" or "SNOW" or "BLIZZARD")
                     {
-                        Notify.Custom($"Snow effects cannot be disabled when weather is ~y~{EventManager.GetServerWeather}~s~.");
+                        Notify.Custom(Localization.GetString("WeatherOptions_SnowDisableWarning", EventManager.GetServerWeather));
                         return;
                     }
 
-                    Notify.Custom($"Snow effects will now be forced {(_checked ? "~g~enabled" : "~r~disabled")}~s~.");
+                    Notify.Custom(Localization.GetString("WeatherOptions_SnowToggle", _checked ? Localization.GetString("Common_Enabled") : Localization.GetString("Common_Disabled")));
                     UpdateServerWeather(EventManager.GetServerWeather, EventManager.DynamicWeatherEnabled, _checked);
                 }
             };
