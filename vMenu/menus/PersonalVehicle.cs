@@ -7,6 +7,7 @@ using MenuAPI;
 
 using static CitizenFX.Core.Native.API;
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.PermissionsManager;
 
 namespace vMenuClient.menus
@@ -31,27 +32,27 @@ namespace vMenuClient.menus
         private void CreateMenu()
         {
             // Menu
-            menu = new Menu(GetSafePlayerName(Game.Player.Name), "Personal Vehicle Options");
+            menu = new Menu(GetSafePlayerName(Game.Player.Name), GetString("PersonalVehicle_Title"));
 
             // menu items
-            var setVehice = new MenuItem("Set Vehicle", "Sets your current vehicle as your personal vehicle. If you already have a personal vehicle set then this will override your selection.") { Label = "Current Vehicle: None" };
-            var toggleEngine = new MenuItem("Toggle Engine", "Toggles the engine on or off, even when you're not inside of the vehicle. This does not work if someone else is currently using your vehicle.");
-            var toggleLights = new MenuListItem("Set Vehicle Lights", new List<string>() { "Force On", "Force Off", "Reset" }, 0, "This will enable or disable your vehicle headlights, the engine of your vehicle needs to be running for this to work.");
-            var toggleStance = new MenuListItem("Vehicle Stance", new List<string>() { "Default", "Lowered" }, 0, "Select stance for your Personal Vehicle.");
-            var kickAllPassengers = new MenuItem("Kick Passengers", "This will remove all passengers from your personal vehicle.");
+            var setVehice = new MenuItem(GetString("PersonalVehicle_SetVehicle"), GetString("PersonalVehicle_SetVehicle_Desc")) { Label = GetString("PersonalVehicle_CurrentVehicle") };
+            var toggleEngine = new MenuItem(GetString("PersonalVehicle_ToggleEngine"), GetString("PersonalVehicle_ToggleEngine_Desc"));
+            var toggleLights = new MenuListItem(GetString("PersonalVehicle_SetLights"), new List<string>() { GetString("PersonalVehicle_ForceOn"), GetString("PersonalVehicle_ForceOff"), GetString("PersonalVehicle_Reset") }, 0, GetString("PersonalVehicle_SetLights_Desc"));
+            var toggleStance = new MenuListItem(GetString("PersonalVehicle_VehicleStance"), new List<string>() { GetString("PersonalVehicle_Default"), GetString("PersonalVehicle_Lowered") }, 0, GetString("PersonalVehicle_VehicleStance_Desc"));
+            var kickAllPassengers = new MenuItem(GetString("PersonalVehicle_KickPassengers"), GetString("PersonalVehicle_KickPassengers_Desc"));
             //MenuItem
-            var lockDoors = new MenuItem("Lock Vehicle Doors", "This will lock all your vehicle doors for all players. Anyone already inside will always be able to leave the vehicle, even if the doors are locked.");
-            var unlockDoors = new MenuItem("Unlock Vehicle Doors", "This will unlock all your vehicle doors for all players.");
-            var doorsMenuBtn = new MenuItem("Vehicle Doors", "Open, close, remove and restore vehicle doors here.")
+            var lockDoors = new MenuItem(GetString("PersonalVehicle_LockDoors"), GetString("PersonalVehicle_LockDoors_Desc"));
+            var unlockDoors = new MenuItem(GetString("PersonalVehicle_UnlockDoors"), GetString("PersonalVehicle_UnlockDoors_Desc"));
+            var doorsMenuBtn = new MenuItem(GetString("PersonalVehicle_VehicleDoors"), GetString("PersonalVehicle_VehicleDoors_Desc"))
             {
-                Label = "→→→"
+                Label = GetString("Common_Label_Arrow")
             };
-            var soundHorn = new MenuItem("Sound Horn", "Sounds the horn of the vehicle.");
-            var toggleAlarm = new MenuItem("Toggle Alarm Sound", "Toggles the vehicle alarm sound on or off. This does not set an alarm. It only toggles the current sounding status of the alarm.");
-            var enableBlip = new MenuCheckboxItem("Add Blip For Personal Vehicle", "Enables or disables the blip that gets added when you mark a vehicle as your personal vehicle.", EnableVehicleBlip) { Style = MenuCheckboxItem.CheckboxStyle.Cross };
-            var exclusiveDriver = new MenuCheckboxItem("Exclusive Driver", "If enabled, then you will be the only one that can enter the drivers seat. Other players will not be able to drive the car. They can still be passengers.", false) { Style = MenuCheckboxItem.CheckboxStyle.Cross };
+            var soundHorn = new MenuItem(GetString("PersonalVehicle_SoundHorn"), GetString("PersonalVehicle_SoundHorn_Desc"));
+            var toggleAlarm = new MenuItem(GetString("PersonalVehicle_ToggleAlarm"), GetString("PersonalVehicle_ToggleAlarm_Desc"));
+            var enableBlip = new MenuCheckboxItem(GetString("PersonalVehicle_AddBlip"), GetString("PersonalVehicle_AddBlip_Desc"), EnableVehicleBlip) { Style = MenuCheckboxItem.CheckboxStyle.Cross };
+            var exclusiveDriver = new MenuCheckboxItem(GetString("PersonalVehicle_ExclusiveDriver"), GetString("PersonalVehicle_ExclusiveDriver_Desc"), false) { Style = MenuCheckboxItem.CheckboxStyle.Cross };
             //submenu
-            VehicleDoorsMenu = new Menu("Vehicle Doors", "Vehicle Doors Management");
+            VehicleDoorsMenu = new Menu(GetString("PersonalVehicle_VehicleDoors"), GetString("PersonalVehicle_DoorsManagement"));
             MenuController.AddSubmenu(menu, VehicleDoorsMenu);
             MenuController.BindMenuItem(menu, VehicleDoorsMenu, doorsMenuBtn);
 

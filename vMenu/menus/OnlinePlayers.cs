@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 
 using static CitizenFX.Core.Native.API;
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.PermissionsManager;
 
 namespace vMenuClient.menus
@@ -23,7 +24,7 @@ namespace vMenuClient.menus
         // Menu variable, will be defined in CreateMenu()
         private Menu menu;
 
-        readonly Menu playerMenu = new("Online Players", "Player:");
+        readonly Menu playerMenu = new(GetString("OnlinePlayers_Title"), GetString("OnlinePlayers_PlayerSubtitle"));
         IPlayer currentPlayer = new NativePlayer(Game.Player);
 
 
@@ -33,24 +34,24 @@ namespace vMenuClient.menus
         private void CreateMenu()
         {
             // Create the menu.
-            menu = new Menu(Game.Player.Name, "Online Players")
+            menu = new Menu(Game.Player.Name, GetString("OnlinePlayers_Title"))
             {
-                CounterPreText = "Players: "
+                CounterPreText = GetString("OnlinePlayers_PlayersCounter")
             };
 
             MenuController.AddSubmenu(menu, playerMenu);
 
-            var sendMessage = new MenuItem("Send Private Message", "Sends a private message to this player. ~r~Note: staff may be able to see all PM's.");
-            var teleport = new MenuItem("Teleport To Player", "Teleport to this player.");
-            var teleportVeh = new MenuItem("Teleport Into Player Vehicle", "Teleport into the vehicle of the player.");
-            var summon = new MenuItem("Summon Player", "Teleport the player to you.");
-            var toggleGPS = new MenuItem("Toggle GPS", "Enables or disables the GPS route on your radar to this player.");
-            var spectate = new MenuItem("Spectate Player", "Spectate this player. Click this button again to stop spectating.");
-            var printIdentifiers = new MenuItem("Print Identifiers", "This will print the player's identifiers to the client console (F8). And also save it to the CitizenFX.log file.");
-            var kill = new MenuItem("~r~Kill Player", "Kill this player, note they will receive a notification saying that you killed them. It will also be logged in the Staff Actions log.");
-            var kick = new MenuItem("~r~Kick Player", "Kick the player from the server.");
-            var ban = new MenuItem("~r~Ban Player Permanently", "Ban this player permanently from the server. Are you sure you want to do this? You can specify the ban reason after clicking this button.");
-            var tempban = new MenuItem("~r~Ban Player Temporarily", "Give this player a tempban of up to 30 days (max). You can specify duration and ban reason after clicking this button.");
+            var sendMessage = new MenuItem(GetString("OnlinePlayers_SendMessage"), GetString("OnlinePlayers_SendMessage_Desc"));
+            var teleport = new MenuItem(GetString("OnlinePlayers_TeleportTo"), GetString("OnlinePlayers_TeleportTo_Desc"));
+            var teleportVeh = new MenuItem(GetString("OnlinePlayers_TeleportIntoVeh"), GetString("OnlinePlayers_TeleportIntoVeh_Desc"));
+            var summon = new MenuItem(GetString("OnlinePlayers_Summon"), GetString("OnlinePlayers_Summon_Desc"));
+            var toggleGPS = new MenuItem(GetString("OnlinePlayers_ToggleGPS"), GetString("OnlinePlayers_ToggleGPS_Desc"));
+            var spectate = new MenuItem(GetString("OnlinePlayers_Spectate"), GetString("OnlinePlayers_Spectate_Desc"));
+            var printIdentifiers = new MenuItem(GetString("OnlinePlayers_PrintIdentifiers"), GetString("OnlinePlayers_PrintIdentifiers_Desc"));
+            var kill = new MenuItem(GetString("OnlinePlayers_Kill"), GetString("OnlinePlayers_Kill_Desc"));
+            var kick = new MenuItem(GetString("OnlinePlayers_Kick"), GetString("OnlinePlayers_Kick_Desc"));
+            var ban = new MenuItem(GetString("OnlinePlayers_BanPermanent"), GetString("OnlinePlayers_BanPermanent_Desc"));
+            var tempban = new MenuItem(GetString("OnlinePlayers_BanTemporary"), GetString("OnlinePlayers_BanTemporary_Desc"));
 
             if (IsAllowed(Permission.OPSendMessage))
             {

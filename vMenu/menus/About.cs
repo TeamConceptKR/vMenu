@@ -1,5 +1,7 @@
 ﻿using MenuAPI;
 
+using static vMenuClient.Localization;
+
 namespace vMenuClient.menus
 {
     public class About
@@ -10,19 +12,19 @@ namespace vMenuClient.menus
         private void CreateMenu()
         {
             // Create the menu.
-            menu = new Menu("vMenu", "About vMenu");
+            menu = new Menu("vMenu", GetString("Menu_AboutvMenu"));
 
             // Create menu items.
-            var version = new MenuItem("vMenu Version", $"This server is using vMenu ~b~~h~{MainMenu.Version}~h~~s~.")
+            var version = new MenuItem(GetString("About_vMenuVersion"), GetString("About_vMenuVersion_Desc", MainMenu.Version))
             {
                 Label = $"~h~{MainMenu.Version}~h~"
             };
-            var credits = new MenuItem("About vMenu / Credits", "vMenu is made by ~b~Vespura~s~. For more info, checkout ~b~www.vespura.com/vmenu~s~. Thank you to: Deltanic, Brigliar, IllusiveTea, Shayan Doust, zr0iq and Golden for your contributions!");
+            var credits = new MenuItem(GetString("About_Credits"), GetString("About_Credits_Desc"));
 
             var serverInfoMessage = vMenuShared.ConfigManager.GetSettingsString(vMenuShared.ConfigManager.Setting.vmenu_server_info_message);
             if (!string.IsNullOrEmpty(serverInfoMessage))
             {
-                var serverInfo = new MenuItem("Server Info", serverInfoMessage);
+                var serverInfo = new MenuItem(GetString("About_ServerInfo"), serverInfoMessage);
                 var siteUrl = vMenuShared.ConfigManager.GetSettingsString(vMenuShared.ConfigManager.Setting.vmenu_server_info_website_url);
                 if (!string.IsNullOrEmpty(siteUrl))
                 {

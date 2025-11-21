@@ -5,6 +5,7 @@ using CitizenFX.Core;
 using MenuAPI;
 
 using static vMenuClient.CommonFunctions;
+using static vMenuClient.Localization;
 using static vMenuShared.ConfigManager;
 using static vMenuShared.PermissionsManager;
 
@@ -18,13 +19,7 @@ namespace vMenuClient.menus
         public bool ShowCurrentSpeaker = UserDefaults.ShowCurrentSpeaker;
         public bool ShowVoiceStatus = UserDefaults.ShowVoiceStatus;
         public float currentProximity = (GetSettingsFloat(Setting.vmenu_override_voicechat_default_range) != 0.0) ? GetSettingsFloat(Setting.vmenu_override_voicechat_default_range) : UserDefaults.VoiceChatProximity;
-        public List<string> channels = new()
-        {
-            "Channel 1 (Default)",
-            "Channel 2",
-            "Channel 3",
-            "Channel 4",
-        };
+        public List<string> channels;
         public string currentChannel;
         private readonly List<float> proximityRange = new()
         {
@@ -42,18 +37,27 @@ namespace vMenuClient.menus
 
         private void CreateMenu()
         {
+            // Initialize channels with localized strings
+            channels = new List<string>()
+            {
+                GetString("VoiceChat_Channel1"),
+                GetString("VoiceChat_Channel2"),
+                GetString("VoiceChat_Channel3"),
+                GetString("VoiceChat_Channel4"),
+            };
+            
             currentChannel = channels[0];
             if (IsAllowed(Permission.VCStaffChannel))
             {
-                channels.Add("Staff Channel");
+                channels.Add(GetString("VoiceChat_StaffChannel"));
             }
 
             // Create the menu.
-            menu = new Menu(Game.Player.Name, "Voice Chat Settings");
+            menu = new Menu(Game.Player.Name, GetString("VoiceChat_Title"));
 
-            var voiceChatEnabled = new MenuCheckboxItem("Enable Voice Chat", "Enable or disable voice chat.", EnableVoicechat);
-            var showCurrentSpeaker = new MenuCheckboxItem("Show Current Speaker", "Shows who is currently talking.", ShowCurrentSpeaker);
-            var showVoiceStatus = new MenuCheckboxItem("Show Microphone Status", "Shows whether your microphone is open or muted.", ShowVoiceStatus);
+            var voiceChatEnabled = new MenuCheckboxItem(GetString("VoiceChat_Enable"), GetString("VoiceChat_Enable_Desc"), EnableVoicechat);
+            var showCurrentSpeaker = new MenuCheckboxItem(GetString("VoiceChat_ShowSpeaker"), GetString("VoiceChat_ShowSpeaker_Desc"), ShowCurrentSpeaker);
+            var showVoiceStatus = new MenuCheckboxItem(GetString("VoiceChat_ShowMicStatus"), GetString("VoiceChat_ShowMicStatus_Desc"), ShowVoiceStatus);
 
             var proximity = new List<string>()
             {
@@ -67,8 +71,8 @@ namespace vMenuClient.menus
                 "2 km",
                 "Global",
             };
-            var voiceChatProximity = new MenuItem("Voice Chat Proximity (" + ConvertToMetric(currentProximity) + ")", "Set the voice chat receiving proximity in meters. Set to 0 for global.");
-            var voiceChatChannel = new MenuListItem("Voice Chat Channel", channels, channels.IndexOf(currentChannel), "Set the voice chat channel.");
+            var voiceChatProximity = new MenuItem(GetString("VoiceChat_Proximity", ConvertToMetric(currentProximity)), GetString("VoiceChat_Proximity_Desc"));
+            var voiceChatChannel = new MenuListItem(GetString("VoiceChat_Channel"), channels, channels.IndexOf(currentChannel), GetString("VoiceChat_Channel_Desc"));
 
             if (IsAllowed(Permission.VCEnable))
             {
@@ -106,20 +110,20 @@ namespace vMenuClient.menus
                 if (item == voiceChatChannel)
                 {
                     currentChannel = channels[newIndex];
-                    Subtitle.Custom($"New voice chat channel set to: ~b~{channels[newIndex]}~s~.");
+                    Subtitle.Custom(GetString("VoiceChat_ChannelSet", channels[newIndex]));
                 }
             };
             menu.OnItemSelect += async (sender, item, index) =>
             {
                 if (item == voiceChatProximity)
                 {
-                    var result = await GetUserInput(windowTitle: $"Enter Proximity In Meters. Current: ({ConvertToMetric(currentProximity)})", maxInputLength: 6);
+                    var result = await GetUserInput(windowTitle: GetString("VoiceChat_ProximityPrompt", ConvertToMetric(currentProximity)), maxInputLength: 6);
 
                     if (float.TryParse(result, out var resultfloat))
                     {
                         currentProximity = resultfloat;
-                        Subtitle.Custom($"New voice chat proximity set to: ~b~{ConvertToMetric(currentProximity)}~s~.");
-                        voiceChatProximity.Text = ("Voice Chat Proximity (" + ConvertToMetric(currentProximity) + ")");
+                        Subtitle.Custom(GetString("VoiceChat_ProximitySet", ConvertToMetric(currentProximity)));
+                        voiceChatProximity.Text = GetString("VoiceChat_Proximity", ConvertToMetric(currentProximity));
                     }
                 }
             };
