@@ -15,17 +15,17 @@ namespace vMenuClient.menus
 
         private void CreateMenu()
         {
-            AddTextEntryByHash(0x86F10CE6, "Upload To Cfx.re Forum"); // Replace the "Upload To Social Club" button in gallery
-            AddTextEntry("ERROR_UPLOAD", "Are you sure you want to upload this photo to Cfx.re forum?"); // Replace the warning message text for uploading
+            AddTextEntryByHash(0x86F10CE6, "Cfx.re 포럼에 업로드"); // Replace the "Upload To Social Club" button in gallery
+            AddTextEntry("ERROR_UPLOAD", "이 사진을 Cfx.re 포럼에 업로드하시겠습니까?"); // Replace the warning message text for uploading
 
             // Create the menu.
-            menu = new Menu("Recording", "Recording Options");
+            menu = new Menu("녹화", "녹화 옵션");
 
-            var takePic = new MenuItem("Take Photo", "Takes a photo and saves it to the Pause Menu gallery.");
-            var openPmGallery = new MenuItem("Open Gallery", "Opens the Pause Menu gallery.");
-            var startRec = new MenuItem("Start Recording", "Start a new game recording using GTA V's built in recording.");
-            var stopRec = new MenuItem("Stop Recording", "Stop and save your current recording.");
-            var openEditor = new MenuItem("Rockstar Editor", "Open the rockstar editor, note you might want to quit the session first before doing this to prevent some issues.");
+            var takePic = new MenuItem("사진 촬영", "사진을 촬영하여 일시정지 메뉴 갤러리에 저장합니다.");
+            var openPmGallery = new MenuItem("갤러리 열기", "일시정지 메뉴 갤러리를 엽니다.");
+            var startRec = new MenuItem("녹화 시작", "GTA V 내장 녹화 기능을 사용하여 새 게임 녹화를 시작합니다.");
+            var stopRec = new MenuItem("녹화 중지", "현재 녹화를 중지하고 저장합니다.");
+            var openEditor = new MenuItem("록스타 에디터", "록스타 에디터를 엽니다. 일부 문제를 방지하려면 먼저 세션을 종료하는 것이 좋습니다.");
 
             menu.AddMenuItem(takePic);
             menu.AddMenuItem(openPmGallery);
@@ -39,7 +39,7 @@ namespace vMenuClient.menus
                 {
                     if (IsRecording())
                     {
-                        Notify.Alert("You are already recording a clip, you need to stop recording first before you can start recording again!");
+                        Notify.Alert("이미 클립을 녹화 중입니다. 다시 녹화를 시작하려면 먼저 녹화를 중지해야 합니다!");
                     }
                     else
                     {
@@ -60,7 +60,7 @@ namespace vMenuClient.menus
                 {
                     if (!IsRecording())
                     {
-                        Notify.Alert("You are currently NOT recording a clip, you need to start recording first before you can stop and save a clip.");
+                        Notify.Alert("현재 클립을 녹화 중이 아닙니다. 클립을 중지하고 저장하려면 먼저 녹화를 시작해야 합니다.");
                     }
                     else
                     {
@@ -81,7 +81,7 @@ namespace vMenuClient.menus
                     }
                     // then fade in the screen.
                     DoScreenFadeIn(1);
-                    Notify.Alert("You left your previous session before entering the Rockstar Editor. Restart the game to be able to rejoin the server's main session.", true, true);
+                    Notify.Alert("록스타 에디터에 들어가기 전에 이전 세션을 종료했습니다. 서버의 메인 세션에 다시 참가하려면 게임을 다시 시작하세요.", true, true);
                 }
             };
 
