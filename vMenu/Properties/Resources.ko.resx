@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Main Menu Items -->
+  <data name="Menu_OnlinePlayers" xml:space="preserve">
+    <value>온라인 플레이어</value>
+  </data>
+  <data name="Menu_OnlinePlayers_Desc" xml:space="preserve">
+    <value>현재 접속 중인 모든 플레이어입니다.</value>
+  </data>
+  <data name="Menu_BannedPlayers" xml:space="preserve">
+    <value>차단된 플레이어</value>
+  </data>
+  <data name="Menu_BannedPlayers_Desc" xml:space="preserve">
+    <value>이 메뉴에서 차단된 모든 플레이어를 보고 관리할 수 있습니다.</value>
+  </data>
+  <data name="Menu_PlayerRelatedOptions" xml:space="preserve">
+    <value>플레이어 관련 옵션</value>
+  </data>
+  <data name="Menu_PlayerRelatedOptions_Desc" xml:space="preserve">
+    <value>플레이어 관련 하위 범주에 대한 이 하위 메뉴를 엽니다.</value>
+  </data>
+  <data name="Menu_PlayerOptions" xml:space="preserve">
+    <value>플레이어 옵션</value>
+  </data>
+  <data name="Menu_PlayerOptions_Desc" xml:space="preserve">
+    <value>일반적인 플레이어 옵션에 여기서 액세스할 수 있습니다.</value>
+  </data>
+  <data name="Menu_VehicleRelatedOptions" xml:space="preserve">
+    <value>차량 관련 옵션</value>
+  </data>
+  <data name="Menu_VehicleRelatedOptions_Desc" xml:space="preserve">
+    <value>차량 관련 하위 범주에 대한 이 하위 메뉴를 엽니다.</value>
+  </data>
+  <data name="Menu_VehicleOptions" xml:space="preserve">
+    <value>차량 옵션</value>
+  </data>
+  <data name="Menu_VehicleOptions_Desc" xml:space="preserve">
+    <value>여기서 일반적인 차량 옵션을 변경할 수 있을 뿐만 아니라 차량을 조정하고 스타일을 지정할 수 있습니다.</value>
+  </data>
+  <data name="Menu_VehicleSpawner" xml:space="preserve">
+    <value>차량 스포너</value>
+  </data>
+  <data name="Menu_VehicleSpawner_Desc" xml:space="preserve">
+    <value>이름으로 차량을 스폰하거나 특정 카테고리에서 하나를 선택하십시오.</value>
+  </data>
+  <data name="Menu_SavedVehicles" xml:space="preserve">
+    <value>저장된 차량</value>
+  </data>
+  <data name="Menu_SavedVehicles_Desc" xml:space="preserve">
+    <value>새 차량을 저장하거나 이미 저장된 차량을 스폰하거나 삭제합니다.</value>
+  </data>
+  <data name="Menu_PersonalVehicle" xml:space="preserve">
+    <value>개인 차량</value>
+  </data>
+  <data name="Menu_PersonalVehicle_Desc" xml:space="preserve">
+    <value>차량을 개인 차량으로 설정하고 내부에 없을 때 해당 차량에 대한 일부 사항을 제어합니다.</value>
+  </data>
+  <data name="Menu_PlayerAppearance" xml:space="preserve">
+    <value>플레이어 외모</value>
+  </data>
+  <data name="Menu_PlayerAppearance_Desc" xml:space="preserve">
+    <value>보행자 모델을 선택하고 사용자 정의하고 사용자 정의된 캐릭터를 저장 및 로드합니다.</value>
+  </data>
+  <data name="Menu_MPPedCustomization" xml:space="preserve">
+    <value>멀티플레이어 캐릭터 커스터마이징</value>
+  </data>
+  <data name="Menu_MPPedCustomization_Desc" xml:space="preserve">
+    <value>멀티플레이어 캐릭터를 생성, 편집, 저장 및 로드합니다. ~r~참고: 이 하위 메뉴에서 생성된 캐릭터만 저장할 수 있습니다. vMenu는 이 하위 메뉴 외부에서 생성된 캐릭터를 감지할 수 없습니다. 단순히 GTA 제한 때문입니다.</value>
+  </data>
+  <data name="Menu_WorldRelatedOptions" xml:space="preserve">
+    <value>세계 관련 옵션</value>
+  </data>
+  <data name="Menu_WorldRelatedOptions_Desc" xml:space="preserve">
+    <value>세계 관련 하위 범주에 대한 이 하위 메뉴를 엽니다.</value>
+  </data>
+  <data name="Menu_TimeOptions" xml:space="preserve">
+    <value>시간 옵션</value>
+  </data>
+  <data name="Menu_TimeOptions_Desc" xml:space="preserve">
+    <value>시간을 변경하고 다른 시간 관련 옵션을 편집합니다.</value>
+  </data>
+  <data name="Menu_WeatherOptions" xml:space="preserve">
+    <value>날씨 옵션</value>
+  </data>
+  <data name="Menu_WeatherOptions_Desc" xml:space="preserve">
+    <value>여기에서 모든 날씨 관련 옵션을 변경합니다.</value>
+  </data>
+  <data name="Menu_WeaponOptions" xml:space="preserve">
+    <value>무기 옵션</value>
+  </data>
+  <data name="Menu_WeaponOptions_Desc" xml:space="preserve">
+    <value>무기를 추가/제거하고 무기를 수정하고 탄약 옵션을 설정합니다.</value>
+  </data>
+  <data name="Menu_WeaponLoadouts" xml:space="preserve">
+    <value>무기 로드아웃</value>
+  </data>
+  <data name="Menu_WeaponLoadouts_Desc" xml:space="preserve">
+    <value>저장된 무기 로드아웃을 관리하고 스폰합니다.</value>
+  </data>
+  <data name="Menu_ToggleNoClip" xml:space="preserve">
+    <value>NoClip 전환</value>
+  </data>
+  <data name="Menu_ToggleNoClip_Desc" xml:space="preserve">
+    <value>NoClip을 켜거나 끕니다.</value>
+  </data>
+  <data name="Menu_VoiceChatSettings" xml:space="preserve">
+    <value>음성 채팅 설정</value>
+  </data>
+  <data name="Menu_VoiceChatSettings_Desc" xml:space="preserve">
+    <value>여기에서 음성 채팅 옵션을 변경합니다.</value>
+  </data>
+  <data name="Menu_RecordingOptions" xml:space="preserve">
+    <value>녹화 옵션</value>
+  </data>
+  <data name="Menu_RecordingOptions_Desc" xml:space="preserve">
+    <value>게임 내 녹화 옵션입니다.</value>
+  </data>
+  <data name="Menu_MiscSettings" xml:space="preserve">
+    <value>기타 설정</value>
+  </data>
+  <data name="Menu_MiscSettings_Desc" xml:space="preserve">
+    <value>기타 vMenu 옵션/설정은 여기에서 구성할 수 있습니다. 이 메뉴에서 설정을 저장할 수도 있습니다.</value>
+  </data>
+  <data name="Menu_AboutvMenu" xml:space="preserve">
+    <value>vMenu 정보</value>
+  </data>
+  <data name="Menu_AboutvMenu_Desc" xml:space="preserve">
+    <value>vMenu에 대한 정보입니다.</value>
+  </data>
+
+  <!-- About Menu -->
+  <data name="About_vMenuVersion" xml:space="preserve">
+    <value>vMenu 버전</value>
+  </data>
+  <data name="About_vMenuVersion_Desc" xml:space="preserve">
+    <value>이 서버는 vMenu ~b~~h~{0}~h~~s~을(를) 사용하고 있습니다.</value>
+  </data>
+  <data name="About_Credits" xml:space="preserve">
+    <value>vMenu 정보 / 크레딧</value>
+  </data>
+  <data name="About_Credits_Desc" xml:space="preserve">
+    <value>vMenu는 ~b~Vespura~s~가 만들었습니다. 자세한 정보는 ~b~www.vespura.com/vmenu~s~를 확인하세요. 기여해 주신 Deltanic, Brigliar, IllusiveTea, Shayan Doust, zr0iq 및 Golden에게 감사드립니다!</value>
+  </data>
+  <data name="About_ServerInfo" xml:space="preserve">
+    <value>서버 정보</value>
+  </data>
+
+  <!-- Recording Menu -->
+  <data name="Recording_Title" xml:space="preserve">
+    <value>녹화 옵션</value>
+  </data>
+  <data name="Recording_TakePhoto" xml:space="preserve">
+    <value>사진 찍기</value>
+  </data>
+  <data name="Recording_TakePhoto_Desc" xml:space="preserve">
+    <value>사진을 찍어 일시 중지 메뉴 갤러리에 저장합니다.</value>
+  </data>
+  <data name="Recording_OpenGallery" xml:space="preserve">
+    <value>갤러리 열기</value>
+  </data>
+  <data name="Recording_OpenGallery_Desc" xml:space="preserve">
+    <value>일시 중지 메뉴 갤러리를 엽니다.</value>
+  </data>
+  <data name="Recording_StartRecording" xml:space="preserve">
+    <value>녹화 시작</value>
+  </data>
+  <data name="Recording_StartRecording_Desc" xml:space="preserve">
+    <value>GTA V의 내장 녹화를 사용하여 새 게임 녹화를 시작합니다.</value>
+  </data>
+  <data name="Recording_StopRecording" xml:space="preserve">
+    <value>녹화 중지</value>
+  </data>
+  <data name="Recording_StopRecording_Desc" xml:space="preserve">
+    <value>현재 녹화를 중지하고 저장합니다.</value>
+  </data>
+  <data name="Recording_RockstarEditor" xml:space="preserve">
+    <value>Rockstar 에디터</value>
+  </data>
+  <data name="Recording_RockstarEditor_Desc" xml:space="preserve">
+    <value>Rockstar 에디터를 엽니다. 일부 문제를 방지하기 위해 이 작업을 수행하기 전에 세션을 종료하는 것이 좋습니다.</value>
+  </data>
+  <data name="Recording_AlreadyRecording" xml:space="preserve">
+    <value>이미 클립을 녹화하고 있습니다. 다시 녹화를 시작하려면 먼저 녹화를 중지해야 합니다!</value>
+  </data>
+  <data name="Recording_NotRecording" xml:space="preserve">
+    <value>현재 클립을 녹화하고 있지 않습니다. 클립을 중지하고 저장하려면 먼저 녹화를 시작해야 합니다.</value>
+  </data>
+  <data name="Recording_EditorQuit" xml:space="preserve">
+    <value>Rockstar 에디터에 들어가기 전에 이전 세션을 종료했습니다. 서버의 메인 세션에 다시 참가하려면 게임을 다시 시작하세요.</value>
+  </data>
+
+  <!-- Common Labels -->
+  <data name="Common_Label_Arrow" xml:space="preserve">
+    <value>→→→</value>
+  </data>
+  
+</root>

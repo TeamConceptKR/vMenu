@@ -15,17 +15,17 @@ namespace vMenuClient.menus
 
         private void CreateMenu()
         {
-            AddTextEntryByHash(0x86F10CE6, "Upload To Cfx.re Forum"); // Replace the "Upload To Social Club" button in gallery
-            AddTextEntry("ERROR_UPLOAD", "Are you sure you want to upload this photo to Cfx.re forum?"); // Replace the warning message text for uploading
+            AddTextEntryByHash(0x86F10CE6, "Cfx.re 포럼에 업로드"); // Replace the "Upload To Social Club" button in gallery
+            AddTextEntry("ERROR_UPLOAD", "이 사진을 Cfx.re 포럼에 업로드하시겠습니까?"); // Replace the warning message text for uploading
 
             // Create the menu.
-            menu = new Menu("Recording", "Recording Options");
+            menu = new Menu(Localization.GetString("Menu_RecordingOptions"), Localization.GetString("Recording_Title"));
 
-            var takePic = new MenuItem("Take Photo", "Takes a photo and saves it to the Pause Menu gallery.");
-            var openPmGallery = new MenuItem("Open Gallery", "Opens the Pause Menu gallery.");
-            var startRec = new MenuItem("Start Recording", "Start a new game recording using GTA V's built in recording.");
-            var stopRec = new MenuItem("Stop Recording", "Stop and save your current recording.");
-            var openEditor = new MenuItem("Rockstar Editor", "Open the rockstar editor, note you might want to quit the session first before doing this to prevent some issues.");
+            var takePic = new MenuItem(Localization.GetString("Recording_TakePhoto"), Localization.GetString("Recording_TakePhoto_Desc"));
+            var openPmGallery = new MenuItem(Localization.GetString("Recording_OpenGallery"), Localization.GetString("Recording_OpenGallery_Desc"));
+            var startRec = new MenuItem(Localization.GetString("Recording_StartRecording"), Localization.GetString("Recording_StartRecording_Desc"));
+            var stopRec = new MenuItem(Localization.GetString("Recording_StopRecording"), Localization.GetString("Recording_StopRecording_Desc"));
+            var openEditor = new MenuItem(Localization.GetString("Recording_RockstarEditor"), Localization.GetString("Recording_RockstarEditor_Desc"));
 
             menu.AddMenuItem(takePic);
             menu.AddMenuItem(openPmGallery);
@@ -39,7 +39,7 @@ namespace vMenuClient.menus
                 {
                     if (IsRecording())
                     {
-                        Notify.Alert("You are already recording a clip, you need to stop recording first before you can start recording again!");
+                        Notify.Alert(Localization.GetString("Recording_AlreadyRecording"));
                     }
                     else
                     {
@@ -60,7 +60,7 @@ namespace vMenuClient.menus
                 {
                     if (!IsRecording())
                     {
-                        Notify.Alert("You are currently NOT recording a clip, you need to start recording first before you can stop and save a clip.");
+                        Notify.Alert(Localization.GetString("Recording_NotRecording"));
                     }
                     else
                     {
@@ -81,7 +81,7 @@ namespace vMenuClient.menus
                     }
                     // then fade in the screen.
                     DoScreenFadeIn(1);
-                    Notify.Alert("You left your previous session before entering the Rockstar Editor. Restart the game to be able to rejoin the server's main session.", true, true);
+                    Notify.Alert(Localization.GetString("Recording_EditorQuit"), true, true);
                 }
             };
 
