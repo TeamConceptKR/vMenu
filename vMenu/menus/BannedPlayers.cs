@@ -190,7 +190,7 @@ namespace vMenuClient.menus
 
             foreach (var ban in banlist)
             {
-                var recordBtn = new MenuItem(ban.playerName, GetString("BannedPlayers_RecordButton", ban.playerName, ban.bannedBy, ban.bannedUntil, ban.banReason))
+                var recordBtn = new MenuItem(ban.playerName, GetString("BannedPlayers_RecordButton", ban.playerName, ban.bannedBy, ban.bannedUntil.ToString(), ban.banReason))
                 {
                     Label = GetString("Common_Label_Arrow"),
                     ItemData = ban

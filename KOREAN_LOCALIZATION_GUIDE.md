@@ -177,14 +177,14 @@ public void CreateMenu()
 
 ## 프로젝트 상태 (Project Status)
 
-**진행률**: 약 40% 완료 (6/17 메뉴 파일)
+**진행률**: 약 59% 완료 (10/17 메뉴 파일, 370+ 번역된 문자열)
 
-**예상 남은 작업**: 11개 메뉴 파일 + 알림 메시지 + 공통 함수
+**예상 남은 작업**: 7개 메뉴 파일 + 부분 완료 메뉴 + 이벤트 핸들러 메시지
 
 **다음 우선순위**:
-1. 작은 메뉴 파일 (WeaponLoadouts, BannedPlayers)
-2. 중간 크기 메뉴 파일 (PersonalVehicle, VehicleSpawner, OnlinePlayers)
-3. 큰 메뉴 파일 (PlayerOptions, VehicleOptions, PlayerAppearance, MpPedCustomization)
+1. 부분 완료 메뉴 (PersonalVehicle, OnlinePlayers - 이벤트 핸들러 문자열)
+2. 중간 크기 메뉴 파일 (VehicleSpawner, SavedVehicles)
+3. 큰 메뉴 파일 (WeaponOptions, MiscSettings, PlayerOptions, PlayerAppearance, MpPedCustomization)
 4. 시스템 메시지 및 알림
 
 ## 참고 자료 (References)
